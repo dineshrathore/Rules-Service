@@ -1,6 +1,6 @@
 package com.flipkart.logistics.rules;
 
-public interface IExpression {
+public interface IExpression<T> {
 	
 	public enum OPERATION {
 		EQUALS("="), NOTEQUALS("!="), CONTAINS("has"), IN("in");
@@ -10,7 +10,7 @@ public interface IExpression {
 		}
 	}
 	
-	public ITerm getTerm();
+	public ITerm<T> getTerm();
 	public OPERATION getOperation();
 	public IValue getValue();
 }

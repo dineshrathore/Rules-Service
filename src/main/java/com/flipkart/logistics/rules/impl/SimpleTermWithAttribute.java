@@ -6,12 +6,12 @@ import com.flipkart.logistics.rules.ITerm;
 
 /** This class will always get valid field name associated with class **/
 
-public class SimpleTerm<T> implements ITerm<T> {  
+public class SimpleTermWithAttribute<T> implements ITerm<T> {  
 
 	Class<T> klazz;
 	Field fieldName;
 	
-	public SimpleTerm(Class<T> klazz, Field field) {
+	public SimpleTermWithAttribute(Class<T> klazz, Field field) {
 		this.klazz = klazz;
 		this.fieldName = field;
 	}

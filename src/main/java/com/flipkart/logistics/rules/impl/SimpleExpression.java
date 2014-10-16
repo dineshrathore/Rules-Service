@@ -6,15 +6,15 @@ import com.flipkart.logistics.rules.IExpression;
 import com.flipkart.logistics.rules.ITerm;
 import com.flipkart.logistics.rules.IValue;
 
-public class SimpleExpression<T> implements IExpression {
+public class SimpleExpression<T> implements IExpression<T> {
 
-	ITerm term;
+	ITerm<T> term;
 	IValue value;
 	
 	public SimpleExpression(Class<T> klazz, String fieldName, Integer value) {
 		Field field = inspect(klazz, fieldName);
 		if (field != null) {
-			this.term = new SimpleTerm<T>(klazz, field);
+			this.term = new SimpleTermWithAttribute<T>(klazz, field);
 			this.value = new ValueInteger(value);
 		}
 	}
@@ -29,7 +29,7 @@ public class SimpleExpression<T> implements IExpression {
         return null;
     }
     
-	public ITerm getTerm() {
+	public ITerm<T> getTerm() {
 		return term;
 	}
 
