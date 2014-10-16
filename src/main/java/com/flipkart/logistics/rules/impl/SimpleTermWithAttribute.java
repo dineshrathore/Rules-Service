@@ -9,10 +9,12 @@ import com.flipkart.logistics.rules.ITerm;
 public class SimpleTermWithAttribute<T> implements ITerm<T> {  
 
 	Class<T> klazz;
+	CLAUSETYPE clauseType;
 	Field fieldName;
 	
 	public SimpleTermWithAttribute(Class<T> klazz, Field field) {
 		this.klazz = klazz;
+		this.clauseType = CLAUSETYPE.FIELD;
 		this.fieldName = field;
 	}
 
@@ -20,7 +22,11 @@ public class SimpleTermWithAttribute<T> implements ITerm<T> {
 		return klazz;
 	}
 
-	public Field getFieldName() {
+	public CLAUSETYPE getClauseType() {
+		return CLAUSETYPE.FIELD;
+	}
+
+	public Object getClause() {
 		return fieldName;
 	}
 	
