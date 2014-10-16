@@ -13,5 +13,13 @@ public class SimpleRule<T> implements IRule {
 		predicate = new SimplePredicate<T>(klazz, fieldName, value);
 		action = new SimpleAction();
 	}
+
+	public IPredicate getPredicate() {
+		return predicate;
+	}
+
+	public IAction getAction() {
+		return action;
+	}
 	
 }

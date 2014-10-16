@@ -28,5 +28,17 @@ public class SimpleExpression<T> implements IExpression {
         }
         return null;
     }
+    
+	public ITerm getTerm() {
+		return term;
+	}
+
+	public OPERATION getOperation() {
+		return OPERATION.EQUALS;
+	}
+
+	public IValue getValue() {
+		return value;
+	}
 	
 }

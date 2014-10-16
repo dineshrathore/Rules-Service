@@ -1,13 +1,8 @@
 package com.flipkart.logistics.rules;
 
-public interface ITerm {
+import java.lang.reflect.Field;
 
-	public enum OPERATION {
-		EQUALS("="), NOTEQUALS("!="), CONTAINS("has"), IN("in");
-		String name;
-		private OPERATION(String name) {
-			this.name = name;
-		}
-	}
-	
+public interface ITerm<T> {
+	Class<T> getClassObject();
+	Field getFieldName();
 }
