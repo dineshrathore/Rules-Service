@@ -11,7 +11,6 @@ public class SimpleRule<T> implements IRule {
 	
 	public SimpleRule(Class<T> klazz, String fieldName, Integer value) {
 		predicate = new SimplePredicate<T>(klazz, fieldName, value);
-		action = new SimpleAction();
 	}
 
 	public IPredicate getPredicate() {
